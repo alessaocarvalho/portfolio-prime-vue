@@ -91,7 +91,16 @@ onMounted(() => {
   left: 0;
   width: 100%;
   z-index: 999;
+  
+  background-color: var(--menubar-bg);
+  color: var(--menubar-text);
+
   border: none;
   border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 </style>

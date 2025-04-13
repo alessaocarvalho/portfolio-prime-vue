@@ -8,8 +8,7 @@
           alt="Imagem de apresentação"
         />
       </div>
-      <article>
-        <h1>Olá, eu sou o Alisson!</h1>
+      <article class="hero-text">
         <div class="code-editor">
           <div class="editor-header">
             <span class="dot red"></span>
@@ -17,8 +16,10 @@
             <span class="dot green"></span>
           </div>
           <pre class="code-content">
-          <span class="code-line">const welcome = "Bem-vindo(a) ao Meu Portfólio";</span>
-          <span class="code-line">const about = "Sou um desenvolvedor web apaixonado por <span ref="typedText"></span>";</span>
+          <span class="code-line">const nome = "Alisson Carvalho";</span>
+          <span class="code-line">const profissao = "Desenvolvedor Web";</span>
+          <span class="code-line">const mensagem = "Bem-vindo(a) ao Meu Portfólio";</span>
+          <span class="code-line">const sobre = "Sou apaixonado por <span ref="typedText"></span>";</span>
         </pre>
         </div>
       </article>
@@ -28,7 +29,6 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { Image } from "primevue";
 
 const typedText = ref(null);
 
@@ -89,6 +89,7 @@ onMounted(() => {
 }
 
 .circle {
+  border: 2px solid var(--primary-color);
   background-color: var(--secondary-color);
   border-radius: 50%;
   width: 400px;
@@ -100,19 +101,14 @@ onMounted(() => {
   width: 500px;
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 1rem 0;
-  text-align: left;
-}
-
 .code-editor {
   padding: 1.5rem;
   margin: 1rem 0;
+  border: 2px solid var(--primary-color);
   border-radius: 12px;
   width: 100%;
   max-width: 600px;
-  min-height: 300px;
+  min-height: 400px;
   background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   position: relative;
@@ -146,7 +142,7 @@ h1 {
 .code-content {
   font-size: 1rem;
   white-space: pre-wrap;
-  line-height: 1.6;
+  line-height: 1;
 }
 
 .code-line {
@@ -171,17 +167,13 @@ h1 {
 
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 2rem;
+    padding-top: 3rem;
     grid-template-columns: 1fr;
   }
 
-  h1 {
-    margin-top: 2rem;
-  }
-
-  .code-editor {
-    margin-top: 2rem;
-    max-width: 100%;
+  .hero-text {
+    display: flex;
+    justify-content: center;
   }
 
   .circle {
@@ -189,9 +181,9 @@ h1 {
     width: 250px;
     height: 250px;
   }
-  
+
   .circle-image {
-    width: 300px;
+    width: 250px;
   }
 }
 </style>
