@@ -1,3 +1,31 @@
+<template>
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="circle">
+        <Image
+          src="presentation-img.png"
+          alt="Imagem de apresentação"
+          width="300"
+        />
+      </div>
+      <article>
+        <h1>Olá, eu sou o Alisson!</h1>
+        <div class="code-editor">
+          <div class="editor-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <pre class="code-content">
+          <span class="code-line">const welcome = "Bem-vindo(a) ao Meu Portfólio";</span>
+          <span class="code-line">const about = "Sou um desenvolvedor web apaixonado por <span ref="typedText"></span>";</span>
+        </pre>
+        </div>
+      </article>
+    </div>
+  </section>
+</template>
+
 <script setup>
 import { ref, onMounted } from "vue";
 import { Image } from "primevue";
@@ -9,7 +37,7 @@ const words = [
   "design moderno. ",
   "perfomance. ",
   "novas tecnologias. ",
-  "experiências incríveis. ",
+  "inovação. ",
 ];
 
 let wordIndex = 0;
@@ -45,30 +73,7 @@ function typeEffect() {
 onMounted(() => {
   typeEffect();
 });
-
-
 </script>
-
-<template>
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="circle">
-        <Image
-          src="presentation-img.png"
-          alt="Imagem de apresentação"
-          width="300"
-        />
-      </div>
-      <article class="hero-text">
-        <h1>Bem-vindo ao Meu Portfólio</h1>
-        <p>
-          Sou um desenvolvedor web apaixonado por <span ref="typedText"></span>
-        </p>
-        <a href="#projects" class="cta-button">Conheça meu trabalho</a>
-      </article>
-    </div>
-  </section>
-</template>
 
 <style scoped>
 .hero-section {
@@ -88,47 +93,90 @@ onMounted(() => {
   border-radius: 50%;
   width: 250px;
   height: 250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.hero-text h1 {
-  font-size: 2.5rem;
+h1 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.code-editor {
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  min-height: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.editor-header {
+  display: flex;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.cta-button {
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   display: inline-block;
-  background-color: #007ad9;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #005fa3;
+.red {
+  background-color: #ff5f56;
 }
 
-/* Responsivo */
+.yellow {
+  background-color: #ffbd2e;
+}
+
+.green {
+  background-color: #27c93f;
+}
+
+.code-content {
+  font-size: 1rem;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.code-line {
+  display: block;
+}
+
+.code-line span::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 3rem;
+    padding-top: 2rem;
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
-  .hero-text {
-    margin-top: 1rem;
+  h1 {
+    margin-top: 2rem;
+  }
+
+  .code-editor {
+    margin-top: 2rem;
+    max-width: 100%;
   }
 
   .circle {
