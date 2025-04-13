@@ -10,54 +10,46 @@ import {
 import Menubar from "primevue/menubar";
 import Button from "primevue/button";
 import "primeicons/primeicons.css";
+import router from "./router";
 
 const items = [
   {
     label: "Início",
     icon: "pi pi-fw pi-home",
-    command: () => scrollToSection("home"),
+    command: () => router.push("/"),
+
   },
   {
     label: "Sobre",
     icon: "pi pi-fw pi-user",
-    command: () => scrollToSection("sobre"),
+    command: () => router.push("/about"),
   },
   {
     label: "Projetos",
     icon: "pi pi-fw pi-folder",
-    command: () => scrollToSection("projetos"),
     hasSubmenu: true,
     items: [
       {
         label: "Projeto 1",
         icon: "pi pi-fw pi-file",
-        command: () => scrollToSection("projeto1"),
       },
       {
         label: "Projeto 2",
         icon: "pi pi-fw pi-file",
-        command: () => scrollToSection("projeto2"),
       },
     ],
   },
   {
     label: "Habilidades",
     icon: "pi pi-fw pi-star",
-    command: () => scrollToSection("habilidades"),
+    command: () => router.push("/skills"),
   },
   {
     label: "Contato",
     icon: "pi pi-fw pi-envelope",
-    command: () => scrollToSection("contato"),
+    command: () => router.push("/contact"),
   },
 ];
-
-const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
 
 onMounted(() => {
   initTheme();

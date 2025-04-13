@@ -2,10 +2,10 @@
   <section class="hero-section">
     <div class="hero-content">
       <div class="circle">
-        <Image
-          src="presentation-img.png"
+        <img
+          class="circle-image"
+          src="/presentation-img.png"
           alt="Imagem de apresentação"
-          width="300"
         />
       </div>
       <article>
@@ -89,11 +89,15 @@ onMounted(() => {
 }
 
 .circle {
-  background-color: #ece4ca;
+  background-color: var(--secondary-color);
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
   margin: 0 auto;
+}
+
+.circle-image {
+  width: 500px;
 }
 
 h1 {
@@ -109,6 +113,7 @@ h1 {
   width: 100%;
   max-width: 600px;
   min-height: 300px;
+  background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   position: relative;
 }
@@ -181,6 +186,12 @@ h1 {
 
   .circle {
     margin: 0 auto;
+    width: 250px;
+    height: 250px;
+  }
+  
+  .circle-image {
+    width: 300px;
   }
 }
 </style>
