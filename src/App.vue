@@ -1,7 +1,11 @@
 <script setup>
 import { RouterView } from "vue-router";
 import { onMounted } from "vue";
-import { initTheme, toggleDarkTheme, isDarkTheme } from "./composables/useDarkTheme";
+import {
+  initTheme,
+  toggleDarkTheme,
+  isDarkTheme,
+} from "./composables/useDarkTheme";
 
 import Menubar from "primevue/menubar";
 import Button from "primevue/button";
@@ -53,28 +57,49 @@ const scrollToSection = (id) => {
   if (section) {
     section.scrollIntoView({ behavior: "smooth" });
   }
-}
+};
 
 onMounted(() => {
   initTheme();
 });
-
 </script>
 
 <template>
-  <Menubar :model="items" >
+  <Menubar class="custom-menubar" :model="items">
     <template #item="{ item, props, hasSubmenu }">
-      <a v-bind="props.action" @click="command" class="menubar-item" :class="{ 'has-submenu': hasSubmenu }">
+      <a
+        v-bind="props.action"
+        @click="command"
+        class="menubar-item"
+        :class="{ 'has-submenu': hasSubmenu }"
+      >
         <span :class="item.icon"></span>
         <span>{{ item.label }}</span>
-        <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down"/>
+        <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down" />
       </a>
     </template>
-    <template #start>
-    </template>
+    <template #start> </template>
     <template #end>
-      <Button :icon="isDarkTheme ?  'pi pi-fw pi-moon' : 'pi pi-fw pi-sun'" severity="secondary" @click="toggleDarkTheme" aria-label="Toggle Dark Mode" rounded />
+      <Button
+        :icon="isDarkTheme ? 'pi pi-fw pi-moon' : 'pi pi-fw pi-sun'"
+        severity="secondary"
+        @click="toggleDarkTheme"
+        aria-label="Toggle Dark Mode"
+        rounded
+      />
     </template>
   </Menubar>
   <RouterView />
 </template>
+
+<style scoped>
+.custom-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  border: none;
+  border-radius: 0;
+}
+</style>
