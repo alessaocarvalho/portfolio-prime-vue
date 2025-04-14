@@ -17,7 +17,6 @@ const items = [
     label: "Início",
     icon: "pi pi-fw pi-home",
     command: () => router.push("/"),
-
   },
   {
     label: "Sobre",
@@ -27,17 +26,7 @@ const items = [
   {
     label: "Projetos",
     icon: "pi pi-fw pi-folder",
-    hasSubmenu: true,
-    items: [
-      {
-        label: "Projeto 1",
-        icon: "pi pi-fw pi-file",
-      },
-      {
-        label: "Projeto 2",
-        icon: "pi pi-fw pi-file",
-      },
-    ],
+    command: () => router.push("/projects"),
   },
   {
     label: "Habilidades",
@@ -57,18 +46,19 @@ onMounted(() => {
 </script>
 
 <template>
-  <Menubar class="custom-menubar" :model="items">
-    <template #item="{ item, props, hasSubmenu }">
-      <a
-        v-bind="props.action"
-        @click="command"
-        class="menubar-item"
-        :class="{ 'has-submenu': hasSubmenu }"
+  <Menubar :model="items">
+    <template #item="{ item, props }">
+      <router-link
+        v-if="item.command"
+        v-slot="{ href, navigate }"
+        :to="href"
+        custom
       >
-        <span :class="item.icon"></span>
-        <span>{{ item.label }}</span>
-        <span v-if="hasSubmenu" class="pi pi-fw pi-angle-down" />
-      </a>
+        <a v-ripple :href="href" v-bind="props.action" @click="command">
+          <span :class="item.icon"></span>
+          <span>{{ item.label }}</span>
+        </a>
+      </router-link>
     </template>
     <template #start> </template>
     <template #end>
@@ -83,24 +73,3 @@ onMounted(() => {
   </Menubar>
   <RouterView />
 </template>
-
-<style scoped>
-.custom-menubar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  
-  background-color: var(--menubar-bg);
-  color: var(--menubar-text);
-
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-</style>

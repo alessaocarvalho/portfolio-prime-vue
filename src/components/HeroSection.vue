@@ -89,11 +89,12 @@ onMounted(() => {
 }
 
 .circle {
-  border: 2px solid var(--primary-color);
-  background-color: var(--secondary-color);
+  /* border: 2px solid var(--p-primary-color);
+  background-color: var(--p-secondary-color); */
   border-radius: 50%;
   width: 400px;
   height: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   margin: 0 auto;
 }
 
@@ -104,12 +105,12 @@ onMounted(() => {
 .code-editor {
   padding: 1.5rem;
   margin: 1rem 0;
-  border: 2px solid var(--primary-color);
+  /* border: 2px solid var(--p-primary-color);
+  background-color: var(--p-secondary-color); */
   border-radius: 12px;
   width: 100%;
   max-width: 600px;
   min-height: 400px;
-  background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   position: relative;
 }
