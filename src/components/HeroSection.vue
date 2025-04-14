@@ -186,11 +186,10 @@ onMounted(() => {
   .circle-image {
     width: 200px;
   }
-}
 
-.code-editor {
-  max-width: 300px;
-  max-height: 500px;
+  .code-editor {
+    max-width: 300px;
+    max-height: 500px;
+  }
 }
-
 </style>
