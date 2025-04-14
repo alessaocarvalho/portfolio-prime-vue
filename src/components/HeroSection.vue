@@ -77,7 +77,7 @@ onMounted(() => {
 
 <style scoped>
 .hero-section {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .hero-content {
@@ -168,8 +168,8 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 3rem;
     grid-template-columns: 1fr;
+    max-height: 100vh;
   }
 
   .hero-text {
@@ -179,12 +179,18 @@ onMounted(() => {
 
   .circle {
     margin: 0 auto;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
 
   .circle-image {
-    width: 250px;
+    width: 200px;
   }
 }
+
+.code-editor {
+  max-width: 300px;
+  max-height: 500px;
+}
+
 </style>
