@@ -1,16 +1,46 @@
+<template>
+  <Menubar :model="items" :dt="customMenubar">
+    <template #item="{ item, props }">
+      <router-link
+        v-if="item.command"
+        v-slot="{ href }"
+        :to="href"
+        custom
+      >
+        <a v-ripple :href="href" v-bind="props.action" @click="command">
+          <span :class="item.icon"></span>
+          <span>{{ item.label }}</span>
+        </a>
+      </router-link>
+    </template>
+    <template #start> </template>
+    <template #end>
+      <Button
+        :icon="isDarkTheme ? 'pi pi-fw pi-moon' : 'pi pi-fw pi-sun'"
+        severity="secondary"
+        @click="toggleDarkTheme"
+        aria-label="Toggle Dark Mode"
+        rounded
+      />
+    </template>
+  </Menubar>
+  <RouterView />
+</template>
+
 <script setup>
 import { RouterView } from "vue-router";
-import { onMounted } from "vue";
-import {
-  initTheme,
-  toggleDarkTheme,
-  isDarkTheme,
-} from "./composables/useDarkTheme";
+import { toggleDarkTheme } from "./composables/useDarkTheme";
 
 import Menubar from "primevue/menubar";
 import Button from "primevue/button";
 import "primeicons/primeicons.css";
 import router from "./router";
+
+const customMenubar = {
+      root: {
+       borderRadius: '0',
+      }
+}
 
 const items = [
   {
@@ -40,36 +70,4 @@ const items = [
   },
 ];
 
-onMounted(() => {
-  initTheme();
-});
 </script>
-
-<template>
-  <Menubar :model="items">
-    <template #item="{ item, props }">
-      <router-link
-        v-if="item.command"
-        v-slot="{ href, navigate }"
-        :to="href"
-        custom
-      >
-        <a v-ripple :href="href" v-bind="props.action" @click="command">
-          <span :class="item.icon"></span>
-          <span>{{ item.label }}</span>
-        </a>
-      </router-link>
-    </template>
-    <template #start> </template>
-    <template #end>
-      <Button
-        :icon="isDarkTheme ? 'pi pi-fw pi-moon' : 'pi pi-fw pi-sun'"
-        severity="secondary"
-        @click="toggleDarkTheme"
-        aria-label="Toggle Dark Mode"
-        rounded
-      />
-    </template>
-  </Menubar>
-  <RouterView />
-</template>

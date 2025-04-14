@@ -2,5 +2,18 @@ body {
   margin: 0;
   padding: 0;
   font-family: poppins, sans-serif;
+  background-color: var(--body-bg);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --body-bg: var(--p-surface-100);
+  --hero-border: var(--p-primary-500);
+  --hero-bg: var(--p-surface-200);
+}
+
+:root[class="dark-theme"] {
+  --body-bg: var(--p-surface-900);
+  --hero-border: var(--p-primary-500);
+  --hero-bg: var(--p-surface-950);
 }

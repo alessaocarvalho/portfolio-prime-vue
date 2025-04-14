@@ -89,8 +89,8 @@ onMounted(() => {
 }
 
 .circle {
-  /* border: 2px solid var(--p-primary-color);
-  background-color: var(--p-secondary-color); */
+  border: 2px solid var(--hero-border);
+  background-color: var(--hero-bg);
   border-radius: 50%;
   width: 400px;
   height: 400px;
@@ -105,8 +105,8 @@ onMounted(() => {
 .code-editor {
   padding: 1.5rem;
   margin: 1rem 0;
-  /* border: 2px solid var(--p-primary-color);
-  background-color: var(--p-secondary-color); */
+  border: 2px solid var(--hero-border);
+  background-color: var(--hero-bg);
   border-radius: 12px;
   width: 100%;
   max-width: 600px;
