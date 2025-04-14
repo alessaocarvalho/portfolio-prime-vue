@@ -169,7 +169,7 @@ onMounted(() => {
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
-    max-height: 100vh;
+    max-height: 80vh;
   }
 
   .hero-text {
