@@ -40,6 +40,7 @@ const customMenubar = {
   colorScheme: {
     light: {
       root: {
+        background: 'var(--hero-bg)',
         borderColor: '0',
         borderRadius: '0',
         submenuBorderColor: '0',
@@ -48,6 +49,7 @@ const customMenubar = {
     },
     dark: {
         root:{
+          background: 'var(--hero-bg)',
           borderColor: '0',
           borderRadius: '0',
           submenuBorderColor: '0',

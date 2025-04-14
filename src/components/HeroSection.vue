@@ -9,6 +9,7 @@
         />
       </div>
       <article class="hero-text">
+        <h1>Olá, eu sou o Alisson</h1>
         <div class="code-editor">
           <div class="editor-header">
             <span class="dot red"></span>
@@ -77,14 +78,23 @@ onMounted(() => {
 
 <style scoped>
 .hero-section {
+  padding: 2rem;
+  background-color: var(--hero-section-bg);
+}
+
+.hero-text {
+  font-size: 2rem;
+  color: var(--hero-text-color);
+  text-align: left;
   padding: 1rem;
+  max-width: 600px;
+  margin-left: 2rem;
 }
 
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 1rem;
   min-height: 80vh;
 }
 
@@ -168,28 +178,30 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .hero-content {
-    grid-template-columns: 1fr;
-    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-text {
-    display: flex;
-    justify-content: center;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
 
   .circle {
     margin: 0 auto;
-    width: 200px;
-    height: 200px;
+    width: 60vw;
+    height: auto;
   }
 
   .circle-image {
-    width: 200px;
+    width: 60vw;
   }
 
   .code-editor {
-    max-width: 300px;
-    max-height: 500px;
+    width: 80vw;
+    height: auto;
   }
 }
 </style>

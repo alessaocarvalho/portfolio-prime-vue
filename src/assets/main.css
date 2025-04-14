@@ -10,10 +10,14 @@ body {
   --body-bg: var(--p-surface-150);
   --hero-border: var(--p-primary-500);
   --hero-bg: var(--p-surface-200);
+  --hero-section-bg: var(--p-primary-300);
+  --hero-text-color: var(--p-surface-950);
 }
 
 :root[class="dark-theme"] {
-  --body-bg: var(--p-surface-900);
+  --body-bg: var(--p-surface-950);
   --hero-border: var(--p-primary-500);
   --hero-bg: var(--p-surface-950);
+  --hero-section-bg: var(--p-primary-950);
+  --hero-text-color: var(--p-surface-150);
 }
