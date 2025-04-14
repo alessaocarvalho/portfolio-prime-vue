@@ -37,9 +37,24 @@ import "primeicons/primeicons.css";
 import router from "./router";
 
 const customMenubar = {
+  colorScheme: {
+    light: {
       root: {
-       borderRadius: '0',
-      }
+        borderColor: '0',
+        borderRadius: '0',
+        submenuBorderColor: '0',
+        submenuBorderRadius: '0',
+      },
+    },
+    dark: {
+        root:{
+          borderColor: '0',
+          borderRadius: '0',
+          submenuBorderColor: '0',
+          submenuBorderRadius: '0',
+        }
+      },
+  }
 }
 
 const items = [
