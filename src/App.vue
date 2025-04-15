@@ -2,12 +2,12 @@
   <Menubar :model="items" :dt="customMenubar">
     <template #item="{ item, props }">
       <router-link
-        v-if="item.command"
-        v-slot="{ href }"
-        :to="href"
+        v-if="item.to"
+        :to="item.to"
+        v-slot="{ href, navigate }"
         custom
       >
-        <a v-ripple :href="href" v-bind="props.action" @click="command">
+        <a v-ripple :href="href" v-bind="props.action" @click="navigate">
           <span :class="item.icon"></span>
           <span>{{ item.label }}</span>
         </a>
@@ -63,27 +63,27 @@ const items = [
   {
     label: "Início",
     icon: "pi pi-fw pi-home",
-    command: () => router.push("/"),
+    to: "/",
   },
   {
     label: "Sobre",
     icon: "pi pi-fw pi-user",
-    command: () => router.push("/about"),
+    to: "/about",
   },
   {
     label: "Projetos",
     icon: "pi pi-fw pi-folder",
-    command: () => router.push("/projects"),
+    to: "/projects",
   },
   {
     label: "Habilidades",
     icon: "pi pi-fw pi-star",
-    command: () => router.push("/skills"),
+    to: "/skills",
   },
   {
     label: "Contato",
     icon: "pi pi-fw pi-envelope",
-    command: () => router.push("/contact"),
+    to: "/contact",
   },
 ];
 
