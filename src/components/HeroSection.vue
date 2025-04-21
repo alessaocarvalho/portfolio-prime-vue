@@ -1,15 +1,17 @@
 <template>
   <section class="hero-section">
     <div class="hero-content">
-      <div class="circle">
+      <div class="hero-circle">
         <img
           class="circle-image"
           src="/presentation-img.png"
           alt="Imagem de apresentação"
         />
       </div>
-      <article class="hero-text">
-        <h1>Olá, eu sou o Alisson</h1>
+      <article class="hero-presentation">
+        <div class="hero-title">
+          <h1>Olá, eu sou o Alisson</h1>
+        </div>
         <div class="code-editor">
           <div class="editor-header">
             <span class="dot red"></span>
@@ -78,51 +80,48 @@ onMounted(() => {
 
 <style scoped>
 .hero-section {
-  padding: 80px;
   background-color: var(--hero-section-bg);
+  padding: 1rem;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-text {
+.hero-presentation {
   font-size: 2rem;
   color: var(--hero-text-color);
   text-align: left;
-  padding: 1rem;
-  max-width: 600px;
-  margin-left: 2rem;
 }
 
 .hero-content {
-  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 5rem;
 }
 
-.circle {
-  border: 2px solid var(--hero-border);
+.hero-circle {
+  border: 2px solid var(--item-border);
   background-color: var(--hero-bg);
   border-radius: 50%;
   width: 350px;
   height: 350px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  margin: 0 auto;
 }
 
 .circle-image {
-  width: 400px;
+  width: 350px;
 }
 
 .code-editor {
   padding: 1.5rem;
   margin: 1rem 0;
-  border: 2px solid var(--hero-border);
+  border: 2px solid var(--item-border);
   background-color: var(--hero-bg);
   border-radius: 12px;
   width: 500px;
-  height: 300px;
+  height: 350px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  position: relative;
 }
 
 .editor-header {
@@ -183,18 +182,19 @@ onMounted(() => {
 
   .hero-content {
     padding-top: 2rem;
+    gap: 0;
     display: flex;
     flex-direction: column;
   }
 
-  .hero-text {
+  .hero-presentation {
     font-size: 1.5rem;
     text-align: center;
     margin: 0;
     padding: 0;
   }
 
-  .circle {
+  .hero-circle {
     margin: 0 auto;
     width: 60vw;
     height: auto;
@@ -205,8 +205,9 @@ onMounted(() => {
   }
 
   .code-editor {
+    text-align: left;
     width: 80vw;
-    height: auto;
+    height: 350px;
   }
 }
 </style>
