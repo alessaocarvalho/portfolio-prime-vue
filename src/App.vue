@@ -1,5 +1,5 @@
 <template>
-  <Menubar :model="items" :dt="customMenubar">
+  <Menubar class="menubar" :model="items" :dt="customMenubar">
     <template #item="{ item, props }">
       <router-link
         v-if="item.to"
@@ -34,7 +34,6 @@ import { toggleDarkTheme } from "./composables/useDarkTheme";
 import Menubar from "primevue/menubar";
 import Button from "primevue/button";
 import "primeicons/primeicons.css";
-import router from "./router";
 
 const customMenubar = {
   colorScheme: {
@@ -88,3 +87,10 @@ const items = [
 ];
 
 </script>
+
+<style scoped>
+.menubar {
+  position: fixed;
+  width: 100%;
+}
+</style>

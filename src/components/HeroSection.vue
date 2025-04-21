@@ -78,8 +78,9 @@ onMounted(() => {
 
 <style scoped>
 .hero-section {
-  padding: 2rem;
+  padding: 80px;
   background-color: var(--hero-section-bg);
+  min-height: 100vh;
 }
 
 .hero-text {
@@ -92,24 +93,24 @@ onMounted(() => {
 }
 
 .hero-content {
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  min-height: 80vh;
 }
 
 .circle {
   border: 2px solid var(--hero-border);
   background-color: var(--hero-bg);
   border-radius: 50%;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   margin: 0 auto;
 }
 
 .circle-image {
-  width: 500px;
+  width: 400px;
 }
 
 .code-editor {
@@ -118,9 +119,8 @@ onMounted(() => {
   border: 2px solid var(--hero-border);
   background-color: var(--hero-bg);
   border-radius: 12px;
-  width: 100%;
-  max-width: 600px;
-  min-height: 400px;
+  width: 500px;
+  height: 300px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   position: relative;
 }
@@ -153,7 +153,7 @@ onMounted(() => {
 .code-content {
   font-size: 1rem;
   white-space: pre-wrap;
-  line-height: 1;
+  line-height: 1rem;
 }
 
 .code-line {
@@ -177,7 +177,12 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem;
+  }
+
   .hero-content {
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
   }
