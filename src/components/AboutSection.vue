@@ -106,6 +106,16 @@ import Card from "primevue/card";
 }
 
 @media (max-width: 768px) {
+
+   .about-header {
+        max-width: 80vw;
+    }
+
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+    }
+
   .about-cards {
     flex-direction: column;
     gap: 1rem;
