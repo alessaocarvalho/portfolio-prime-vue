@@ -18,45 +18,26 @@
         </p>
       </div>
   <div class="about-cards">
-    <Card class="card">
-      <template #title>Simple Card</template>
-      <template #content>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+    <AboutCard title="Teste 1" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
           sed consequuntur error repudiandae numquam deserunt quisquam repellat
           libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </template>
-    </Card>
-    <Card class="card">
-      <template #title>Simple Card</template>
-      <template #content>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+          esse, cupiditate neque quas!"/>
+
+    <AboutCard title="Teste 2" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
           sed consequuntur error repudiandae numquam deserunt quisquam repellat
           libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </template>
-    </Card>
-    <Card class="card">
-      <template #title>Simple Card</template>
-      <template #content>
-        <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
+          esse, cupiditate neque quas!"/>
+
+    <AboutCard title="Teste 3" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
           sed consequuntur error repudiandae numquam deserunt quisquam repellat
           libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!
-        </p>
-      </template>
-    </Card>
+          esse, cupiditate neque quas!"/>
   </div>
 </section>
 </template>
 
 <script setup>
-import Card from "primevue/card";
+import AboutCard from "./AboutCard.vue";
 </script>
 
 <style scoped>
