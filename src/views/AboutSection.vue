@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-import AboutCard from "./AboutCard.vue";
+import AboutCard from "../components/AboutCard.vue";
 </script>
 
 <style scoped>

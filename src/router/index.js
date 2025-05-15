@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
-import HeroSection from "@/components/HeroSection.vue";
-import AboutSection from "@/components/AboutSection.vue";
-import ProjectsSection from "@/components/ProjectsSection.vue";
-import ContactSection from "@/components/ContactSection.vue";
-import SkillsSection from "@/components/SkillsSection.vue";
+import HeroSection from "@/views/HeroSection.vue";
+import AboutSection from "@/views/AboutSection.vue";
+import ProjectsSection from "@/views/ProjectsSection.vue";
+import ContactSection from "@/views/ContactSection.vue";
+import SkillsSection from "@/views/SkillsSection.vue";
 
 const routes = [
   { path: "/", name: "home", component: HomePage },
