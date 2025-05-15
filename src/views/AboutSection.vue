@@ -1,5 +1,5 @@
 <template>
-    <section class="about-section">
+    <section class="about-section" id="about">
       <div class="about-header">
         <h1>
           <i class="pi pi-user" style="font-size: 2.5rem; margin: 1rem;"></i>
