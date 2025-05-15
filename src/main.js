@@ -43,7 +43,6 @@ const MyPreset = definePreset(Aura, {
 });
 
 const app = createApp(App);
-app.use(router);
 app.use(PrimeVue, {
   theme: {
     preset: MyPreset,
