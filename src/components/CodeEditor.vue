@@ -29,7 +29,7 @@ const { typedText } = useTypeEffect();
   border-radius: 12px;
   width: 500px;
   height: 350px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px var(--element-box-shadow);
 }
 
 .editor-header {

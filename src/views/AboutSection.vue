@@ -2,7 +2,6 @@
     <section class="about-section" id="about">
       <div class="about-header">
         <h1>
-          <i class="pi pi-user" style="font-size: 2.5rem; margin: 1rem;"></i>
           Sobre mim
         </h1>
         <img
@@ -29,9 +28,7 @@
           esse, cupiditate neque quas!"/>
 
     <AboutCard title="Teste 3" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore
-          sed consequuntur error repudiandae numquam deserunt quisquam repellat
-          libero asperiores earum nam nobis, culpa ratione quam perferendis
-          esse, cupiditate neque quas!"/>
+          sed consequuntur"/>
   </div>
 </section>
 </template>
@@ -61,29 +58,26 @@ import AboutCard from "../components/AboutCard.vue";
 }
 
 .profile-picture {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border-radius: 175px;
   margin: 1rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px var(--element-box-shadow);
 }
 
 .about-cards {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
   margin: 2rem;
 }
 
 .card {
-  max-width: 300px;
-  max-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 300px;
+  height: 300px;
+  padding: 0.5rem;
   border: 2px solid var(--item-border);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px var(--element-box-shadow);
 }
 
 @media (max-width: 768px) {

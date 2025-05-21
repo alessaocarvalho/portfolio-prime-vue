@@ -12,6 +12,7 @@ body {
   --hero-bg: var(--p-surface-200);
   --hero-section-bg: var(--p-primary-300);
   --hero-text-color: var(--p-surface-950);
+  --element-box-shadow: rgba(0, 0, 0, 0.18);
 }
 
 :root[class="dark-theme"] {
@@ -20,4 +21,5 @@ body {
   --hero-bg: var(--p-surface-950);
   --hero-section-bg: var(--p-primary-950);
   --hero-text-color: var(--p-surface-150);
+  --element-box-shadow: rgba(255, 255, 255, 0.20);
 }

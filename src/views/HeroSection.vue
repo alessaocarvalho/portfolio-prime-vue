@@ -51,7 +51,7 @@ import CodeEditor from "@/components/CodeEditor.vue";
   border-radius: 50%;
   width: 350px;
   height: 350px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px var(--element-box-shadow);
 }
 
 .circle-image {
